@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HomePage {% endblock %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+
+<div class="container shadow p-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <p>The Url you are looking for doesn't exist</p>
+            <a href="/urlhandler/dashboard" class="btn btn-primary">Shorten A Url</a>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<div id="home" class="sec-main">
+    <h1 class="main-heading">Where creativity happens.</h1>
+</div>
+
+{% endblock %}
