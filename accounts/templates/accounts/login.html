@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block title %}
 	Login
@@ -8,17 +10,19 @@
 {% block header %}
 <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
+
 <!-- Main css -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
 <section class="sign-in">
+    {{ user }}
   <div class="container">
       <div class="signin-content">
           <div class="signin-image">
               <figure><img src="{% static 'images/signin-image.jpg' %}" alt="sing up image"></figure>
-              <a href="#" class="signup-image-link">Create an account</a>
+              <a href="{% url 'accounts:signup' %}" class="signup-image-link">Create an account</a>
           </div>
 
           <div class="signin-form">
@@ -52,14 +56,15 @@
                       <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                   </div>
               </form>
-              <!-- <div class="social-login">
+              <div class="social-login">
                   <span class="social-label">Or login with</span>
-                  <ul class="socials">
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                  <ul class="social-network social-circle">
+                    <li><a href="{% provider_login_url "facebook" method="oauth2" %}" class="icoFacebook" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/malhotraravi842/" class="icoLinkedin" title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.twitter.com/malhotraravi842/" class="icoTwitter" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.github.com/malhotraravi842/" class="icoGithub" title="Github" target="_blank"><i class="fa fa-github"></i></a></li>
                   </ul>
-              </div> -->
+              </div>
           </div>
       </div>
   </div>

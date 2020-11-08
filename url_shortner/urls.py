@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/',include('accounts.urls',namespace='accounts')),
     path('urlhandler/',include('urlhandler.urls',namespace='urlhandler')),
     path('<str:query>/',home,name='home'),
+    path('social/',include('allauth.urls')),
 ]
