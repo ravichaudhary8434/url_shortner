@@ -15,13 +15,22 @@ Step 1:
 pip install requirements.txt 
 ```
 Step 2: 
-``` cd url_shortner ```
+``` 
+cd url_shortner 
+```
 Step 3:
-``` Python manage.py makemigrations
-    Python manage.py migrate
+
+``` 
+Python manage.py makemigrations
+Python manage.py migrate
  ```
+
  Step 4:
- ``` Python manage.py createsuperuser ```
+ ``` 
+ Python manage.py createsuperuser 
+ ```
 
 Step 5:
-``` Python manage.py runserver ```
+``` 
+Python manage.py runserver 
+```
